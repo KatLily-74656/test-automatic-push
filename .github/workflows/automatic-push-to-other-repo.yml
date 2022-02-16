@@ -1,0 +1,25 @@
+name: Automatic Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        source_file: 'test.md'
+        destination_repo: 'KatLily-74656/SusI-Documentation'
+        destination_folder: 'docs/images'
+        user_email: '<>'
+        user_name: 'Automatic Action Bot'
+        commit_message: 'File was updated and is now pushed to doku'
