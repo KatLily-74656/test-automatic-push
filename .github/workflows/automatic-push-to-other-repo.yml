@@ -19,6 +19,7 @@ jobs:
       with:
         source_file: 'test.md'
         destination_repo: 'KatLily-74656/SusI-Documentation'
+        destination_branch: 'master'
         destination_folder: 'docs/images'
         user_email: '<>'
         user_name: 'Automatic Action Bot'
